@@ -9,37 +9,46 @@ import (
 )
 
 func main() {
-	app := cli.NewCLI("bridge", "0.0.0")
+	app := cli.NewCLI("bridge", "0.0.1")
 	app.Args = os.Args[1:]
 	app.Commands = map[string]cli.CommandFactory{
 		"repo list": func() (cli.Command, error) {
 			return &commands.Repo{}, nil
 		},
-		"repo update": func() (cli.Command, error) {
-			return &commands.Repo{}, nil
+		"repo branches": func() (cli.Command, error) {
+			return &commands.RepoBranches{}, nil
 		},
 		"error list": func() (cli.Command, error) {
-			return &commands.Error{}, nil
+			return &commands.ErrorList{}, nil
+		},
+		"error path": func() (cli.Command, error) {
+			return &commands.ErrorPath{}, nil
 		},
 		"error list authors": func() (cli.Command, error) {
-			return &commands.Error{}, nil
+			return &commands.ErrorList{}, nil
 		},
 		"policy validate": func() (cli.Command, error) {
 			return &commands.Policy{}, nil
 		},
+		"policy list": func() (cli.Command, error) {
+			return &commands.PolicyList{}, nil
+		},
 		"policy add": func() (cli.Command, error) {
-			return &commands.Policy{}, nil
+			return &commands.PolicyAdd{}, nil
 		},
 		"policy delete": func() (cli.Command, error) {
-			return &commands.Policy{}, nil
+			return &commands.PolicyDelete{}, nil
 		},
 		"policy update": func() (cli.Command, error) {
-			return &commands.Policy{}, nil
+			return &commands.PolicyUpdate{}, nil
+		},
+		"policy preview": func() (cli.Command, error) {
+			return &commands.PolicyPreview{}, nil
 		},
 		"scan trigger": func() (cli.Command, error) {
 			return &commands.Scans{}, nil
 		},
-		"suppression trigger": func() (cli.Command, error) {
+		"suppression list": func() (cli.Command, error) {
 			return &commands.Suppression{}, nil
 		},
 		"fix add": func() (cli.Command, error) {
@@ -52,20 +61,4 @@ func main() {
 		fmt.Println(err)
 	}
 	os.Exit(status)
-}
-
-type Bridge struct {
-}
-
-func (*Bridge) Help() string {
-	return "bridge help"
-}
-
-func (*Bridge) Run(args []string) int {
-	fmt.Printf("bridge, %v", args)
-	return 0
-}
-
-func (h *Bridge) Synopsis() string {
-	return h.Help()
 }

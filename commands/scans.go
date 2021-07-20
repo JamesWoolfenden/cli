@@ -4,12 +4,14 @@ import (
 "fmt"
 )
 
+const url="https://www.bridgecrew.cloud/api/v1/scans/integrations"
+
 type Scans struct {
 
 }
 
 func (*Scans) Help() string {
-	return "Scan help"
+	return "Invokes a bridgecrew platform repository scan"
 }
 
 func (*Scans) Run(args []string) int {

@@ -9,7 +9,7 @@ type Repo struct {
 }
 
 func (*Repo) Help() string {
-	return "repo help"
+	return "Get a complete repository list"
 }
 
 func (*Repo) Run(args []string) int {

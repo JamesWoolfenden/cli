@@ -9,7 +9,7 @@ type Policy struct {
 }
 
 func (*Policy) Help() string {
-	return "Policy help"
+	return "Validates a Policy"
 }
 
 func (*Policy) Run(args []string) int {

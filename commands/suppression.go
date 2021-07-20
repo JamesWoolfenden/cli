@@ -9,7 +9,7 @@ type Suppression struct {
 }
 
 func (*Suppression) Help() string {
-	return "Suppression help"
+	return "List suppression rules"
 }
 
 func (*Suppression) Run(args []string) int {
