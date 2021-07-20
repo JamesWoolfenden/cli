@@ -15,7 +15,7 @@ func (*Scans) Help() string {
 }
 
 func (*Scans) Run(args []string) int {
-	fmt.Printf("Scans, %v", args)
+	fmt.Printf("Invoked")
 	return 0
 }
 

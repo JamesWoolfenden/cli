@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"log"
 
 	"github.com/jameswoolfenden/bridge/commands"
 	"github.com/mitchellh/cli"
@@ -10,6 +11,13 @@ import (
 
 func main() {
 	app := cli.NewCLI("bridge", "0.0.1")
+
+	api := os.Getenv("BRIDGECREW_API")
+    
+    if api == "" {
+        log.Fatal("BRIDGECREW_API is missing")
+    }
+
 	app.Args = os.Args[1:]
 	app.Commands = map[string]cli.CommandFactory{
 		"repo list": func() (cli.Command, error) {
