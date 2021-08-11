@@ -1,13 +1,12 @@
 package commands
 
 import (
-"fmt"
+	"fmt"
 )
 
-const url="https://www.bridgecrew.cloud/api/v1/scans/integrations"
+const url = "https://www.bridgecrew.cloud/api/v1/scans/integrations"
 
 type Scans struct {
-
 }
 
 func (*Scans) Help() string {

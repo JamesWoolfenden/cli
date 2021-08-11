@@ -1,11 +1,10 @@
 package commands
 
 import (
-"fmt"
+	"fmt"
 )
 
 type Fixes struct {
-
 }
 
 func (*Fixes) Help() string {

@@ -1,11 +1,10 @@
 package commands
 
 import (
-"fmt"
+	"fmt"
 )
 
 type Suppression struct {
-
 }
 
 func (*Suppression) Help() string {

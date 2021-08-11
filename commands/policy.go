@@ -1,11 +1,10 @@
 package commands
 
 import (
-"fmt"
+	"fmt"
 )
 
 type Policy struct {
-
 }
 
 func (*Policy) Help() string {

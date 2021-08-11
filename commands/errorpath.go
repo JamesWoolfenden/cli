@@ -1,15 +1,15 @@
 package commands
 
 import (
-"fmt"
+	"fmt"
 )
 
 type ErrorPath struct {
-	FilePath string
+	FilePath              string
 	SuppressedErrorsCount int
-	OpenErrorsCount int
-	ErrorsCount int
-	Type string
+	OpenErrorsCount       int
+	ErrorsCount           int
+	Type                  string
 }
 
 func (*ErrorPath) Help() string {

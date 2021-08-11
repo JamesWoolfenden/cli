@@ -1,11 +1,10 @@
 package commands
 
 import (
-"fmt"
+	"fmt"
 )
 
 type RepoBranches struct {
-
 }
 
 func (*RepoBranches) Help() string {
